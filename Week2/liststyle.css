@@ -1,0 +1,107 @@
+body {
+    background-color: whitesmoke;
+}
+
+#header {
+    position: sticky;
+}
+
+#header h1 {
+    display: inline-block;
+    background: linear-gradient(to left, mediumseagreen , dodgerblue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+    padding-top: 5px;
+    padding-left: 40px;
+    margin-bottom: 5px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 800px 1fr;
+}
+
+#container #menu ul {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    list-style: none;
+    font-size: 25px;
+
+}
+
+#container #menu ul li {
+    margin-bottom: 15px;
+}
+
+#container #menu ul li a {
+    text-decoration: none;
+    color: darkgray;
+    font-weight: 600;
+    transition: color .5s;
+}
+
+#container #menu ul li a:hover {
+    color: black;
+}
+
+#post {
+    margin-top: 50px;
+}
+
+#post a {
+    display: block;
+    text-decoration: none;
+    width: 800px;
+    height: 150px;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: initial;
+}
+
+#post a div {
+    width: inherit;
+    height: inherit;
+    box-shadow: 0 0 5px lightgray;
+}
+
+#post a .post1 {
+    font-size: 25px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+#post a .post2 {
+    font-size: 15px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+    padding-top: 5px;
+
+}
+
+#post a .post3 {
+    font-size: 15px;
+    color: dimgray;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+    padding-top: 5px;
+
+}
+
+#post a .post4 {
+    font-size: 15px;
+    color: dimgray;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+
+}
+
