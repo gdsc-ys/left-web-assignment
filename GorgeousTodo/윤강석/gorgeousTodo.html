@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="gorgeousTodo.css" />
+    <script src="gorgeousTodo.js" defer></script>
     <title>GorgeousTodo</title>
   </head>
   <body>
@@ -15,20 +16,17 @@
       </h1>
       <div class="banner-triangle"></div>
     </div>
-    <button class="add-button">add</button>
-    <button class="delete-button">delete</button>
+    <div id = "button-box">
+      <input class="newbox-title-color" type = "color"></input>
+      <input class="newbox-title" placeholder = "new title"></input> 
+      <button class="add-button">add</button>
+    </div>
     <div id="container">
-      <div class="todo-box-container" id="Project">
-        <div class="todo-box">
-          <div class="todo-text">
-            <div class="todo-header">Project</div>
-            <div class="todo-container">
-              <p class="todo-sentence1">javascript</p>
-              <p class="todo-sentence1">carrot</p>
-              <p class="todo-sentence1">carrot</p>
-            </div>
-          </div>
+      <div class="first-line"> 
+        
         </div>
+      </div>
+      <div class="second-line">
       </div>
     </div>
     <div class="modal-back">
@@ -37,11 +35,15 @@
           <h1 id="modal-head-text"></h1>
         </div>
         <div id="check-container"></div>
-        <button id="add-more-tasks">
-          add-more-tasks
-        </button>
+        <div id = "add-button-box">
+          <button id="add-more-tasks">
+            +
+          </button>
+          <label for="add-more-tasks" id="add-more-tasks-label">+</label>
+          <input type="text" id = "add-plan" placeholder="add new plan"></input>
+        </div>
       </div>
     </div>
   </body>
-  <script src="gorgeousTodo.js"></script>
+
 </html>
