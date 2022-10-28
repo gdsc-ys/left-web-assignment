@@ -216,10 +216,8 @@ window.onload = () => {
   })
 }
 
-/** 
 window.addEventListener('beforeunload', () => {
   localStorage.setObject('planList', planList)
   localStorage.setObject('planDictionary', planDictionary)
   localStorage.setObject('planHeadColor', planHeadColor)
 })
-*/
