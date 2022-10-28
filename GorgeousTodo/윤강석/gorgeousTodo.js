@@ -20,7 +20,8 @@ Storage.prototype.getObject = function (name) {
   return result
 }
 
-let planDictionary =
+let planDictionary = new Object()
+let planDictInStor =
   myStorage.getObject('planDictionary') === null
     ? new Object()
     : myStorage.getObject('planDictionary')
@@ -169,6 +170,10 @@ addButton.addEventListener('click', () => {
     alert('제목을 입력해주세요')
     return 0
   }
+  if (planList.includes(newBoxTitle)) {
+    alert('제목이 중복되지 않도록 해주세요')
+    return 0
+  }
   addPlanBox(newBoxTitle, newBoxColor)
   planList.push(newBoxTitle)
   planDictionary[newBoxTitle] = []
@@ -196,12 +201,11 @@ modalBack.addEventListener('click', (e) => {
 })
 
 window.onload = () => {
-  console.log(planList)
-  console.log(planDictionary)
   planList.map((currentTitle) => {
     const currentColor = planHeadColor[currentTitle]
-    const currentPlanList = planDictionary[currentTitle]
+    const currentPlanList = planDictInStor[currentTitle]
     addPlanBox(currentTitle, currentColor)
+    planDictionary[currentTitle] = currentPlanList
     const containerToFind = document.querySelector('#' + currentTitle)
     const todoContainer = containerToFind.querySelector('.todo-container')
     currentPlanList.forEach((currentTextToAdd) => {
@@ -212,8 +216,10 @@ window.onload = () => {
   })
 }
 
+/** 
 window.addEventListener('beforeunload', () => {
   localStorage.setObject('planList', planList)
   localStorage.setObject('planDictionary', planDictionary)
   localStorage.setObject('planHeadColor', planHeadColor)
 })
+*/
