@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  position: absolute;
+  top: 700px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+#title {
+  margin-left: 30px;
+}
+
+#gorgeous {
+  font-size: 70px;
+  margin-bottom: 0px;
+}
+
+#todo {
+  font-weight: lighter;
+  font-size: 70px;
+  margin-top: 0px;
+}
+
+.todo {
+  width: 300px;
+  height: 400px;
+  transition: 0.7s;
+  margin-right: -30px;
+  margin-left: 15px;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 20px;
+  transform: skew(0deg, 5deg);
+  background-color: white;
+}
+
+.todo:hover {
+  filter:blur(3px);
+  transform: translate(0px, -500px) skew(0deg, 5deg);
+}
+
+#category-title {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.category-text {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#change {
+  position: absolute;
+  top: -350px;
+  left: 750px;
+}
