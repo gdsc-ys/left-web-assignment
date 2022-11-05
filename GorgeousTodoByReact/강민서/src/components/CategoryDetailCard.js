@@ -67,7 +67,11 @@ const CategoryDetailCard = ({
           ))}
         </TaskContainer>
         <TaskInputContainer>
-          <TaskInput value={taskInput} onChange={handleChangeTaskInput} />
+          <TaskInput
+            value={taskInput}
+            onChange={handleChangeTaskInput}
+            placeholder="새 Task를 입력해주세요."
+          />
           {taskInput.length > 0 && (
             <AddButton onClick={handleAddTask}>+</AddButton>
           )}
