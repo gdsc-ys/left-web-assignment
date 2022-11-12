@@ -1,13 +1,31 @@
+import * as React from 'react'
 import { useState } from 'react'
 
 //dict = {key : [[detail1, state1],[detail2, state2], ... ]}
-function deepCopyDict(dict) {
+
+type detailType = Array<[string, boolean]>
+
+type planDictType = {
+  [key: string]: detailType
+}
+
+type ModalProps = {
+  planForModal: string
+  planColor: { [key: string]: string }
+  planDetail: { [key: string]: detailType }
+  modalUp: boolean
+  handleModalUp: (value: boolean) => void
+  handlePlanDetail: (value: planDictType) => void
+}
+
+function deepCopyDict(dict: planDictType): planDictType {
   const keylist = Object.keys(dict)
-  const result = {}
+  const result: planDictType = {}
   for (let k of keylist) {
     const curList = dict[k]
-    const subResult = curList.map((comp) => {
-      return [...comp]
+    const subResult: detailType = []
+    curList.forEach((comp) => {
+      subResult.push([...comp])
     })
     result[k] = subResult
   }
@@ -21,7 +39,7 @@ export default function Modal({
   modalUp,
   handleModalUp,
   handlePlanDetail,
-}) {
+}: ModalProps) {
   const [newPlan, handleNewPlan] = useState('')
   const headColor = planColor[planForModal]
   const curPlanDetail = deepCopyDict(planDetail)

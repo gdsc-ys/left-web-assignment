@@ -1,12 +1,12 @@
-import logo from './logo.svg'
+import react from 'react'
 import './App.css'
 import { useState, useRef, useEffect } from 'react'
-import Header from './header.js'
-import AddPlanComponent from './addPlanComponent.js'
-import BoxContainer from './BoxContainer.js'
-import Modal from './Modal.js'
-
-function getStorage(storage, hpl, hpc, hpd) {
+import Header from './header'
+import AddPlanComponent from './addPlanComponent'
+import BoxContainer from './BoxContainer'
+import Modal from './Modal'
+/** 
+function getStorage(storage , hpl, hpc, hpd) {
   if (storage.keys.includes('planList')) {
     hpl(JSON.parse(storage['planList']))
   }
@@ -16,19 +16,21 @@ function getStorage(storage, hpl, hpc, hpd) {
   if (storage.keys.includes('planList')) {
     hpd(JSON.stringify(storage['planDetail']))
   }
-}
+}*/
 
 function App() {
   /** list composed with plan title */
-  const [planList, handlePlanList] = useState([])
+  const [planList, handlePlanList] = useState<Array<string>>([])
   /** map, key : plan title, value : plan color*/
-  const [planColor, handlePlanColor] = useState({})
+  const [planColor, handlePlanColor] = useState<{ [key: string]: string }>({})
   /** map key : plan title, value : plan detail, value = [detail, state] */
-  const [planDetail, handlePlanDetail] = useState({})
+  const [planDetail, handlePlanDetail] = useState<{
+    [key: string]: Array<[string, boolean]>
+  }>({})
 
-  const [modalUp, handleModalUp] = useState(false)
+  const [modalUp, handleModalUp] = useState<boolean>(false)
   /** title to put on modal, executed when clicking the plan box*/
-  const [planForModal, handlePlanForModal] = useState('')
+  const [planForModal, handlePlanForModal] = useState<string>('')
   /**
   const myStorage = useRef(window.localStorage)
 
